@@ -16,7 +16,7 @@ from __init__ import YANDEX_API_KEY
 class YandexSearchApi(generic_search_api.GenericSearchApi):
     """Represent an API to get information from Yandex Search API."""
 
-    __yandex = ""
+    __yandex = None
 
     def __init__(self, api_user, api_key):
         """
