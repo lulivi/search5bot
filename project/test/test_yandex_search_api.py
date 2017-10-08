@@ -9,8 +9,6 @@
 
 # external imports
 import unittest
-import json
-import requests
 
 # path imports
 import __init__
