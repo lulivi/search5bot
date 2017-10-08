@@ -1,8 +1,9 @@
 """Paths import."""
 
 import sys
-import os
+
+# api files
 sys.path.append('../search_api/')
 
-_YANDEX_API_USER = os.getenv('YANDEX_API_USER')
-_YANDEX_API_KEY = os.getenv('YANDEX_API_KEY')
+# settings.py
+sys.path.append('../')
