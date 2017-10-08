@@ -41,11 +41,11 @@ class YandexSearchApi(generic_search_api.GenericSearchApi):
 
         **Returns:**
 
-        * List of dictionarys from JSON
+        * List of dictionaries from JSON that contains a title, an url and
+          a description
         """
         search_results = []
         if keywords != '':
-            req = self.__yandex.search(keywords).items
-            search_results = req.json()['results']
+            search_results = self.__yandex.search(keywords).items
 
         return search_results
