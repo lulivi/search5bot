@@ -28,5 +28,3 @@ class TestYandexSearchApi(unittest.TestCase):
         self.assertFalse(
             YandexSearchApi.search_results(search_item)[1] == [],
             'Not empty list')
-        self.assertTrue(
-            YandexSearchApi.search_results(search_item)[0] == 200, 'OK code')
