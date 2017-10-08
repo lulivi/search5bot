@@ -3,16 +3,14 @@
 
 
 # external imports
-import json
-import requests
 import yandex_search
 
 # internal imports
 import __init__ as init
 import generic_search_api
 
-from init import YANDEX_API_USER
-from init import YANDEX_API_KEY
+from __init__ import YANDEX_API_USER
+from __init__ import YANDEX_API_KEY
 
 
 class YandexSearchApi(generic_search_api.GenericSearchApi):

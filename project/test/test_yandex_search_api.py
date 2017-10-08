@@ -11,7 +11,7 @@
 import unittest
 
 # path imports
-import __init__
+import __init__ as test_init
 
 # internal imports
 from yandex_search_api import YandexSearchApi
@@ -23,7 +23,7 @@ class TestYandexSearchApi(unittest.TestCase):
     def test_get_search_resutls(self):
         """Test if the results are correct."""
         search_item = 'iphone'
-        yandex_sa = YandexSearchApi()
+        yandex_sa = YandexSearchApi(YANDEX_API_USER, YANDEX_API_KEY)
         self.assertFalse(
             yandex_sa.get_search_result(search_item) == [],
             'Not empty list')
