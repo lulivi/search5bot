@@ -1,24 +1,22 @@
 # === Yandex search api ===
 """yandex_api_search module."""
 
-
 # external imports
 import yandex_search
+import os
 
 # internal imports
-import __init__ as init
 import generic_search_api
-
-from __init__ import YANDEX_API_USER
-from __init__ import YANDEX_API_KEY
 
 
 class YandexSearchApi(generic_search_api.GenericSearchApi):
     """Represent an API to get information from Yandex Search API."""
 
     __yandex = None
+    _YANDEX_API_USER = os.getenv('YANDEX_API_USER')
+    _YANDEX_API_KEY = os.getenv('YANDEX_API_KEY')
 
-    def __init__(self, api_user, api_key):
+    def __init__(self):
         """
         Instantiate the Yandex API.
 
@@ -28,7 +26,7 @@ class YandexSearchApi(generic_search_api.GenericSearchApi):
         * api_key - Yandex API key
         """
         self.__yandex = yandex_search.Yandex(
-            api_user=YANDEX_API_USER, api_key=YANDEX_API_KEY)
+            api_user=self._YANDEX_API_USER, api_key=self._YANDEX_API_KEY)
 
     def get_search_result(self, keywords):
         """
@@ -55,3 +53,8 @@ class YandexSearchApi(generic_search_api.GenericSearchApi):
                 search_results.append(newSearchField)
 
         return search_results
+
+
+if __name__ == '__main__':
+    yan = YandexSearchApi()
+    print(yan.get_search_result("hola"))
