@@ -7,7 +7,7 @@ import __init__
 # external imports
 import json
 import requests
-import yandex
+import yandex_search
 
 # internal imports
 import generic_search_api
@@ -16,23 +16,36 @@ import generic_search_api
 class YandexSearchApi(generic_search_api.GenericSearchApi):
     """Represent an API to get information from Yandex Search API."""
 
-    def get_search_result(url):
+    __yandex = ""
+
+    def __init__(self, api_user, api_key):
+        """
+        Instantiate the Yandex API.
+
+        **Args:**
+
+        * api_user - Yandex API username
+        * api_key - Yandex API key
+        """
+        self.__yandex = yandex_search.Yandex(
+            api_user=api_user,
+            api_key=api_key)
+
+    def get_search_result(self, keywords):
         """
         Send a JSON request and save it in a list of dictionaries.
 
         **Args:**
 
-        * url - JSON page format url
+        * keywords - JSON page format url
 
         **Returns:**
 
         * List of dictionarys from JSON
-        * Request status code
         """
         search_results = []
-        search_status_code = -1
-        if url != '':
-            req = requests.get(url)
+        if keywords != '':
+            req = self.__yandex.search(keywords).items
             search_results = req.json()['results']
-            search_status_code = req.status_code
-        return (search_results, search_status_code)
+
+        return search_results
