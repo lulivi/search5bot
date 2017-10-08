@@ -1,5 +1,5 @@
-# === Faroo search api ===
-"""faroo_api_search module."""
+# === Yandex search api ===
+"""yandex_api_search module."""
 
 
 import __init__
