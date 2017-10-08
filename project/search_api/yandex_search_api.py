@@ -2,15 +2,17 @@
 """yandex_api_search module."""
 
 
-import __init__ as init
-
 # external imports
 import json
 import requests
 import yandex_search
 
 # internal imports
+import __init__ as init
 import generic_search_api
+
+from init import YANDEX_API_USER
+from init import YANDEX_API_KEY
 
 
 class YandexSearchApi(generic_search_api.GenericSearchApi):
@@ -28,8 +30,7 @@ class YandexSearchApi(generic_search_api.GenericSearchApi):
         * api_key - Yandex API key
         """
         self.__yandex = yandex_search.Yandex(
-            api_user=api_user,
-            api_key=api_key)
+            api_user=YANDEX_API_USER, api_key=YANDEX_API_KEY)
 
     def get_search_result(self, keywords):
         """
