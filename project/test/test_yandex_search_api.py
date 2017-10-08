@@ -26,5 +26,5 @@ class TestYandexSearchApi(unittest.TestCase):
         """Test if the results are correct."""
         search_item = 'iphone'
         self.assertFalse(
-            YandexSearchApi.search_results(search_item)[1] == [],
+            YandexSearchApi.search_results(search_item) == [],
             'Not empty list')
