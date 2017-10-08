@@ -46,6 +46,13 @@ class YandexSearchApi(generic_search_api.GenericSearchApi):
         """
         search_results = []
         if keywords != '':
-            search_results = self.__yandex.search(keywords).items
+            raw_search_results = self.__yandex.search(keywords).items
+
+            for search_result in search_results:
+                newSearchField = dict()
+                newSearchField['title'] = raw_search_results['title']
+                newSearchField['url'] = raw_search_results['url']
+                newSearchField['description'] = raw_search_results['snippet']
+                search_results.append(newSearchField)
 
         return search_results
