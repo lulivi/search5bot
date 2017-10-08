@@ -9,7 +9,6 @@
 
 # external imports
 import unittest
-from decouple import config
 
 # path imports
 import __init__ as init
