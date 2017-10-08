@@ -27,4 +27,4 @@ class TestYandexSearchApi(unittest.TestCase):
         yandex_sa = YandexSearchApi(settings.YANDEX_API_USER,
                                     settings.YANDEX_API_KEY)
         self.assertFalse(
-            yandex_sa.get_search_result(search_item) == [], 'Not empty list')
+            yandex_sa.get_search_results(search_item) == [], 'Not empty list')

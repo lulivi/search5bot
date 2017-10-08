@@ -25,7 +25,7 @@ class YandexSearchApi(generic_search_api.GenericSearchApi):
         self.__yandex = yandex_search.Yandex(
             api_user=api_user, api_key=api_key)
 
-    def get_search_result(self, keywords):
+    def get_search_results(self, keywords):
         """
         Send a JSON request and save it in a list of dictionaries.
 
@@ -44,16 +44,11 @@ class YandexSearchApi(generic_search_api.GenericSearchApi):
 
             for search_result in raw_search_results:
 
-                newSearchField = dict()
-                newSearchField['title'] = search_result['title']
-                newSearchField['url'] = search_result['url']
-                newSearchField['description'] = search_result['snippet']
+                new_search_field = dict()
+                new_search_field['title'] = search_result['title']
+                new_search_field['description'] = search_result['snippet']
+                new_search_field['url'] = search_result['url']
 
-                search_results.append(newSearchField)
+                search_results.append(new_search_field)
 
         return search_results
-
-
-if __name__ == '__main__':
-    yan = YandexSearchApi()
-    print(yan.get_search_result("hola"))
