@@ -1,18 +1,36 @@
+# === Faroo search api ===
+"""
+faroo_api_search module
+"""
+import __init__
+# external imports
+import json
+import requests
+
+# internal imports
+import generic_search_api
 
 
-class DuckDuckGoApiSearch:
+class FarooSearchApi(generic_search_api.GenericSearchApi):
+    """Represent an API to get information from Faroo Search API."""
 
-    __URL_TO_CALL = http://api.duckduckgo.com/?q=@TERM_TO_SEARCH@&format=json
-
-    def search(term_to_search):
+    def get_search_result(url):
         """
-        Return a list of results from DuckDuckGoApi
+        Send a JSON request and save it in a list of dictionaries.
 
         **Args:**
 
-        *term_to_search - The term to search
+        * url - JSON page format url
 
-        **Returns*
+        **Returns:**
 
-        *List of results obtained by the API
+        * List of dictionarys from JSON
+        * Request status code
         """
+        search_results = []
+        search_status_code = -1
+        if url != '':
+            req = requests.get(url)
+            search_results = req.json()['results']
+            search_status_code = req.status_code
+        return (search_results, search_status_code)
