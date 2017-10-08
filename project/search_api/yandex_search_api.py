@@ -7,13 +7,14 @@ import __init__
 # external imports
 import json
 import requests
+import yandex
 
 # internal imports
 import generic_search_api
 
 
-class FarooSearchApi(generic_search_api.GenericSearchApi):
-    """Represent an API to get information from Faroo Search API."""
+class YandexSearchApi(generic_search_api.GenericSearchApi):
+    """Represent an API to get information from Yandex Search API."""
 
     def get_search_result(url):
         """
