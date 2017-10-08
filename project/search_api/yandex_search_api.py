@@ -2,7 +2,7 @@
 """yandex_api_search module."""
 
 
-import __init__
+import __init__ as init
 
 # external imports
 import json
