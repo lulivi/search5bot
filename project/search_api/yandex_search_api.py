@@ -4,7 +4,6 @@
 # external imports
 import yandex_search
 
-
 # internal imports
 import generic_search_api
 
