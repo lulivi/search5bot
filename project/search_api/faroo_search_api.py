@@ -1,8 +1,9 @@
 # === Faroo search api ===
-"""
-faroo_api_search module
-"""
+"""faroo_api_search module."""
+
+
 import __init__
+
 # external imports
 import json
 import requests
