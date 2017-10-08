@@ -23,7 +23,8 @@ class TestYandexSearchApi(unittest.TestCase):
     def test_get_search_resutls(self):
         """Test if the results are correct."""
         search_item = 'hola'
-        yandex_sa = YandexSearchApi()
+        yandex_sa = YandexSearchApi(__init__._YANDEX_API_USER,
+                                    __init__._YANDEX_API_KEY)
         self.assertFalse(
             yandex_sa.get_search_result(search_item) == [],
             'Not empty list')
