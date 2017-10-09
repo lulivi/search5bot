@@ -13,7 +13,7 @@ import __init__ as init
 from duckduckgo_search_api import DuckDuckGoSearchApi
 
 
-class TestYandexSearchApi(unittest.TestCase):
+class TestDuckDuckGoSearchApi(unittest.TestCase):
     """Testing class for module yandex."""
 
     def test_get_search_resutls(self):
