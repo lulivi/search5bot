@@ -1,5 +1,5 @@
 # === DuckDuckGo search api ===
-"""yandex_api_search module."""
+"""duckduckgo_search_api module."""
 
 # external imports
 import requests
@@ -13,12 +13,12 @@ import generic_search_api
 
 
 class DuckDuckGoSearchApi(generic_search_api.GenericSearchApi):
-    """Represent an API to get information from Yandex Search API."""
+    """Represent an API to get information from DuckDuckGo."""
 
     _ROOT_URL = 'https://duckduckgo.com/html/?q='
 
     def __init__(self):
-        """Instantiate the Yandex API."""
+        """Instantiate the DuckDuckgo class."""
         pass
 
     def get_search_results(self, keywords):
