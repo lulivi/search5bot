@@ -11,11 +11,14 @@
 import unittest
 
 # path imports
-import __init__ as init
+import __init__ as path_appends
 
 # internal imports
 import settings
 from yandex_search_api import YandexSearchApi
+
+
+assert path_appends
 
 
 class TestYandexSearchApi(unittest.TestCase):

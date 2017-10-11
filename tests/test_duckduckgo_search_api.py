@@ -7,10 +7,12 @@
 import unittest
 
 # path imports
-import __init__ as init
+import __init__ as path_appends
 
 # internal imports
 from duckduckgo_search_api import DuckDuckGoSearchApi
+
+assert path_appends
 
 
 class TestDuckDuckGoSearchApi(unittest.TestCase):
