@@ -12,7 +12,7 @@ with open('search_5_bot/version.py') as fp:
     exec(fp.read(), version)
 
 requirements = [
-    'decouple', 'yandex_search', 'requests', 'lxml', 're', 'urllib'
+    'python-decouple', 'yandex_search', 'requests', 'lxml'
 ]
 
 non_packages = ['contrib', 'docs', 'tests', 'data']
