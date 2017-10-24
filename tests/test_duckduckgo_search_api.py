@@ -24,3 +24,7 @@ class TestDuckDuckGoSearchApi(unittest.TestCase):
         ddg_sa = DuckDuckGoSearchApi()
         self.assertFalse(
             ddg_sa.get_search_results(search_item) == [], 'Not empty list')
+
+
+if __name__ == '__main__':
+    unittest.main()
