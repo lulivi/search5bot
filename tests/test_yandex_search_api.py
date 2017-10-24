@@ -31,3 +31,7 @@ class TestYandexSearchApi(unittest.TestCase):
                                     settings.YANDEX_API_KEY)
         self.assertFalse(
             yandex_sa.get_search_results(search_item) == [], 'Not empty list')
+
+
+if __name__ == '__main__':
+    unittest.main()
