@@ -26,6 +26,7 @@ class WikipediaSearchApi(generic_search_api.GenericSearchApi):
         **Args:**
 
         * keywords - Search terms
+        * language - Search language
 
         **Returns:**
 
@@ -71,3 +72,8 @@ class WikipediaSearchApi(generic_search_api.GenericSearchApi):
 
             return search_results
 
+
+if __name__ == '__main__':
+    w_object = WikipediaSearchApi()
+    s_result = w_object.get_search_results('street', 'en')
+    print(dumps(s_result, indent=2))
