@@ -16,7 +16,6 @@ import __init__ as path_appends
 # internal imports
 from wikipedia_search_api import WikipediaSearchApi
 
-
 assert path_appends
 
 
@@ -25,8 +24,14 @@ class TestYandexSearchApi(unittest.TestCase):
 
     def test_get_search_resutls(self):
         """Test if the results are correct."""
-        search_item = 'hola'
+        search_item = 'street'
+        search_language = 'en'
         wikipedia_sa = WikipediaSearchApi()
-        self.assertFalse(
-            wikipedia_sa.get_search_results(search_item) == [],
-            'Not empty list')
+
+        result = wikipedia_sa.get_search_results(search_item, search_language)
+
+        self.assertFalse(result == [], 'Not empty list')
+
+
+if __name__ == '__main__':
+    unittest.main()
