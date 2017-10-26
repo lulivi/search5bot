@@ -8,7 +8,7 @@ import re
 
 from urllib import parse
 
-# internal imports
+# local imports
 import generic_search_api
 
 
@@ -34,7 +34,7 @@ class DuckDuckGoSearchApi(generic_search_api.GenericSearchApi):
         * List of dictionaries from JSON that contains a title, a description
         and an url
         """
-        search_results = []
+        search_results = list()
         if keywords != '':
             html_page = requests.get(self._ROOT_URL + keywords)
             html_tree = lxml.html.fromstring(html_page.content)
@@ -64,11 +64,4 @@ class DuckDuckGoSearchApi(generic_search_api.GenericSearchApi):
 
                 search_results.append(new_search_field)
 
-        return search_results
-
-
-if __name__ == '__main__':
-    ddg = DuckDuckGoSearchApi()
-    search_results = ddg.get_search_results("hola")
-
-    print(search_results)
+        return search_results[:5]
