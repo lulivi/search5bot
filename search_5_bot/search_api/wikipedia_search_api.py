@@ -26,6 +26,7 @@ class WikipediaSearchApi(generic_search_api.GenericSearchApi):
         **Args:**
 
         * keywords - Search terms
+        * language - Search language
 
         **Returns:**
 
@@ -70,4 +71,3 @@ class WikipediaSearchApi(generic_search_api.GenericSearchApi):
                     search_results.append(new_search_field)
 
             return search_results
-
