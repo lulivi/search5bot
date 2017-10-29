@@ -2,6 +2,7 @@
 """wikipedia_search_api module."""
 import wikipedia
 import re
+import traceback
 
 # local imports
 import generic_search_api
@@ -46,7 +47,7 @@ class WikipediaSearchApi(generic_search_api.GenericSearchApi):
                     page_object = wikipedia.page(title=page_title)
 
                 except wikipedia.exceptions.PageError as e:
-
+                    traceback.print_exc(e)
                     raise
 
                 else:
