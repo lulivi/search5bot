@@ -3,8 +3,6 @@
 import wikipedia
 import re
 
-from json import dumps
-
 # local imports
 import generic_search_api
 
@@ -54,13 +52,12 @@ class WikipediaSearchApi(generic_search_api.GenericSearchApi):
                 else:
 
                     # Result title
-                    title = page_title.encode('utf-8').decode('utf-8')
+                    title = page_title
                     new_search_field['title'] = title
 
                     # Result description
                     description = page_object.summary[:100] + '...'
-                    new_search_field['description'] = description.encode(
-                        'utf-8').decode('utf-8')
+                    new_search_field['description'] = description
 
                     # URL
                     title_to_url = re.sub(r'( )', '_', title)
