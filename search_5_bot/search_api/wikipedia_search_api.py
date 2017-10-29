@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """wikipedia_search_api module."""
 import wikipedia
@@ -60,7 +59,7 @@ class WikipediaSearchApi(generic_search_api.GenericSearchApi):
 
                     # Result description
                     description = page_object.summary[:100] + '...'
-                    new_search_field['descrtiption'] = description.encode(
+                    new_search_field['description'] = description.encode(
                         'utf-8').decode('utf-8')
 
                     # URL
